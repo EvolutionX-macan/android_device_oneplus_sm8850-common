@@ -385,6 +385,11 @@ PRODUCT_PACKAGES += \
     NfcResCommon_Sys
 endif
 
+# Page size
+# Device is 4K-pages (kernel CONFIG_ARM64_4K_PAGES=y); declare it so check_elf_file
+# does not require the 16K-readiness alignment that older 4K OEM camera JNI libs lack.
+PRODUCT_MAX_PAGE_SIZE_SUPPORTED := 4096
+
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
