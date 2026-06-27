@@ -90,6 +90,17 @@ blob_fixups: blob_fixups_user_type = {
         .replace_needed('android.hardware.media.c2-V1-ndk.so', 'android.hardware.media.c2-V2-ndk.so'),
     'vendor/etc/perf/perfboostsconfig.xml': blob_fixup()
         .regex_replace(r'Enable="false"', r'Enable="true"'),
+    'vendor/etc/public.libraries.txt': blob_fixup()
+        .add_line_if_missing('libarcsoft_hdr_couple_api.so')
+        .add_line_if_missing('libarcsoft_high_dynamic_range_couple.so')
+        .add_line_if_missing('libarcsoft_smart_denoise.so')
+        .add_line_if_missing('libarcsoft_turbo_hdr_raw.so')
+        .add_line_if_missing('libarcsoft_turbo_raw.so')
+        .add_line_if_missing('libarcsoft_qnnhtp.so')
+        .add_line_if_missing('libQnnHtp.so')
+        .add_line_if_missing('libQnnSystem.so')
+        .add_line_if_missing('libQnnHtpV81Stub.so')
+        .add_line_if_missing('libQnnGpu.so'),
     'vendor/etc/sensors/hals.conf': blob_fixup()
         .regex_replace(r'sensors\.qsh\.so', 'sensors.fusionlight.so'),
     (
