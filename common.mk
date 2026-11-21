@@ -172,6 +172,9 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product-if-exists, device/oneplus/macan-camera/opluscamera.mk)
 
+# The Oplus camera requests more than 64 BufferQueue slots
+$(call soong_config_set,libgui,num_buffer_slots,96)
+
 # Context Hub
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_COPY_FILES += \
