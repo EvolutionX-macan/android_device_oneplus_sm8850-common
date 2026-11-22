@@ -32,8 +32,18 @@ def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
     return f'{lib}_{partition}' if partition == 'vendor' else None
 
 
+def lib_fixup_stock_suffix(lib: str, *args, **kwargs):
+    return f'{lib}_stock'
+
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    (
+        'libgralloc.qti',
+        'libgralloccore',
+        'libgrallocutils',
+        'mapper.qti',
+    ): lib_fixup_stock_suffix,
     (
         'com.qualcomm.qti.dpm.api@1.0',
         'libolc_vnd',

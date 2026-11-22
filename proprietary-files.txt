@@ -216,6 +216,18 @@ vendor/lib64/libsnapdragoncolor-manager.so
 vendor/lib64/libsnapdragoncolor-qdcm.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
+# Display (gralloc)
+vendor/bin/hw/vendor.qti.hardware.display.allocator-service;MODULE_SUFFIX=_stock
+vendor/etc/init/vendor.qti.hardware.display.allocator-service.rc
+vendor/etc/vintf/manifest/mapper.qti.xml
+vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml
+vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-qti-display.so;MODULE_SUFFIX=_stock
+vendor/lib64/hw/mapper.qti.so;MODULE_SUFFIX=_stock
+vendor/lib64/libgralloc.qti.so;MODULE_SUFFIX=_stock
+vendor/lib64/libgralloccore.so;MODULE_SUFFIX=_stock
+vendor/lib64/libgrallocutils.so;MODULE_SUFFIX=_stock
+vendor/lib64/vendor.qti.hardware.display.snapalloc-impl.so;MODULE_SUFFIX=_stock
+
 # Display (SDM)
 vendor/etc/display/DPU1010.xml
 vendor/etc/display/DPU10__.xml
